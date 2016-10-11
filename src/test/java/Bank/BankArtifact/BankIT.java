@@ -28,7 +28,6 @@ public class BankIT {
 
 	@Test
 	public void testDepositAmount() {
-		
 		Client cl = this.bank.getClientByName("Rui");
 		assertNotNull(cl);
 		cl.depositMoney(25);
@@ -38,9 +37,12 @@ public class BankIT {
 	}
 	
 	@Test	
-	public void testWithdrawAmount() {	
-		// use the functions depositAccount(Client), getClientByName(String) & withdrawClientAccount(Client) from Bank
-		assertTrue(true);
+	public void testWithdrawAmount() {
+		Client cl = this.bank.getClientByName("Rui");
+		assertNotNull(cl);
+		cl.depositMoney(25);
+		assertEquals(0,this.bank.withdrawClientAccount(cl, 25),floatTolerance);
+		assertEquals(-1,this.bank.withdrawClientAccount(cl, 1),floatTolerance);
 	}
 	
 	@Test
