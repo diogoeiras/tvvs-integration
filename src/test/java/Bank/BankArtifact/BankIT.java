@@ -50,7 +50,7 @@ public class BankIT {
 		Client cl = this.bank.getClientByName("Rui");
 		assertNotNull(cl);
 		cl.depositMoney(25);
-		Client cl2 = this.bank.getClientByName("Rui");
+		Client cl2 = this.bank.getClientByName("Carlos");
 		assertNotNull(cl2);
 		cl2.depositMoney(25);
 		this.bank.transfer(cl, cl2, 10);
